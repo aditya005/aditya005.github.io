@@ -23,24 +23,13 @@ function displayData(index) {
         document.getElementById("Sloka-Sanskrit").innerHTML = sloka[0];
         document.getElementById("Sloka-English").innerHTML = sloka[1];
     }
-
-    // Update URL without reloading the page
-    const newUrl = window.location.pathname + '?sloka=' + actualIndex;
-    window.history.replaceState({path: newUrl}, '', newUrl);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-    var url = window.location.href.toLowerCase();
-    var nameIndex = Number(url.split('?sloka=')[1]);
-
     // Use crypto.getRandomValues for secure randomness
     var randomBuffer = new Uint32Array(1);
     window.crypto.getRandomValues(randomBuffer);
     var startIndex = randomBuffer[0] % Names.length;
-
-    if (!isNaN(nameIndex) && nameIndex > 0 && nameIndex <= Names.length) {
-        startIndex = nameIndex - 1;
-    }
 
     displayData(startIndex);
 
