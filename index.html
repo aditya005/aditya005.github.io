@@ -3,26 +3,57 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Home</title>
-    <script async src="gtag.js"></script>
-    <script src="jquery-3.6.3.min.js"></script>
-    <script src="Names.js"></script>
-    <script src="Slokas.js"></script>
-    <script src="Site.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vishnu Sahasranama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Inter:wght@400;500&family=Martel:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Site.css"/>
-
+    
+    <script defer src="Names.js"></script>
+    <script defer src="Slokas.js"></script>
+    <script defer src="Site.js"></script>
 </head>
 
 <body>
-    <div class="app">
-        <div id="Index" class="bigfont"></div>
-        <div id="Name" class="bigfont"></div>
-        <div id="Meaning" class="mediumfont"></div>
-        <div id="Sloka-Sanskrit" class="smallfont"></div>
-        <div id="Sloka-English" class="smallfont"></div>
+    <button id="prevBtn" class="nav-btn left-btn">&#10094;</button>
+    <button id="nextBtn" class="nav-btn right-btn">&#10095;</button>
 
+    <div class="app">
+        <div class="name-container">
+            <div id="Index" class="name-index"></div>
+            <div id="Name" class="bigfont"></div>
+        </div>
+        <div id="Meaning" class="mediumfont"></div>
+        <div class="sloka-container">
+            <div id="Sloka-Sanskrit" class="smallfont sanskrit"></div>
+            <div id="Sloka-English" class="smallfont english"></div>
+        </div>
     </div>
     <div class="footer">Contact : me[at]truthseeking.one</div>
+    <div id="secretMenu" class="secret-btn" title="View Full List">⋮</div>
+
+    <div id="listModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close-btn">&times;</span>
+            <h2>Vishnu Sahasranama</h2>
+            <div class="table-container">
+                <table id="namesTable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Meaning</th>
+                            <th>Sanskrit Sloka</th>
+                            <th>English Sloka</th>
+                        </tr>
+                    </thead>
+                    <tbody id="namesTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
